@@ -1,0 +1,36 @@
+
+version : '3'
+
+services: 
+  db: 
+    image: mongo:5
+    restart: always
+    ports: 
+      - 27017:27017
+    environment:
+      MONGOFB_DATABASE: nest-pokemon
+    volumes:
+      - ./mongo:/data/db
+#   app:
+#     build: .
+#     ports:-
+#       - 3000:3000
+#     environment:
+#       - MONGO_USERNAME=root
+#       - MONGO_PASSWORD=example
+#       - MONGO_HOST=db
+#       - MONGO_PORT=27017
+#     depends_on:
+#       - db
+# ```
+# I have tried to use the following command to connect to the database:
+# ```
+# mongo --username root --password example --host localhost --port 27017
+# ```
+# But I get the following error:
+# ```
+# MongoDB shell version v5.0.3
+# connecting to: mongodb://localhost:27017/?compressors=disabled&gssapiServiceName=mongodb
+# Error: Authentication failed.
+# ```
+

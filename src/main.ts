@@ -14,6 +14,6 @@ async function bootstrap() {
       enableImplicitConversion: true
     }
   }));
-  await app.listen(3000);
+  await app.listen(process.env.PORT);
 }
 bootstrap();
